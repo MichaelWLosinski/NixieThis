@@ -3,13 +3,13 @@
  *  Author: michael
  */
 
-#ifndef FADE_OUT_THEN_IN_H_
-#define FADE_OUT_THEN_IN_H_
+#ifndef SLOTMACHINE_H_
+#define SLOTMACHINE_H_
 
 #include "Arduino.h"
 #include "Transition.h"
 
-class FadeOutThenIn : public Transition
+class SlotMachine : public Transition
 {
     public:
    
@@ -17,4 +17,4 @@ class FadeOutThenIn : public Transition
 };
 
 
-#endif
+#endif /* SLOTMACHINE_H_ */

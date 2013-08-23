@@ -13,7 +13,13 @@ class Crossfade : public Transition
 {
   public:
   
+  Crossfade(Observer* observer, int transitionTime);
   virtual void setNumber(int previous, int next);
+  
+  private:
+  
+  byte m_toggle;
+  float m_delta;
 };
 
 #endif

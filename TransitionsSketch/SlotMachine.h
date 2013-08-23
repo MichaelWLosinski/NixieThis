@@ -11,9 +11,11 @@
 
 class SlotMachine : public Transition
 {
-    public:
+  public:
    
-    virtual void setNumber(int previous, int next);
+  SlotMachine(Observer* observer);
+   
+  virtual void setNumber(int previous, int next);
 };
 
 

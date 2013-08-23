@@ -11,9 +11,15 @@
 
 class FadeOutThenIn : public Transition
 {
-    public:
+  public:
    
-    virtual void setNumber(int previous, int next);
+  FadeOutThenIn(Observer* observer, int transitionTime);
+  virtual void setNumber(int previous, int next);
+  
+  private:
+  
+  float m_delta;
+  int dimming;
 };
 
 

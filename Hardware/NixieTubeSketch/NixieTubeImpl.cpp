@@ -16,8 +16,7 @@ NixieTubeImpl::NixieTubeImpl(int number, float brightness, int a, int b, int c, 
   pinMode(m_brightnessPin, OUTPUT);
 }
 
-void NixieTubeImpl::setNumber(int number)
-{
+void NixieTubeImpl::setNumber(int number){
   NixieTube::setNumber(number);
 
   digitalWrite(m_a, m_number & 0x01);
@@ -26,8 +25,7 @@ void NixieTubeImpl::setNumber(int number)
   digitalWrite(m_d, m_number & 0x08);
 }
 
-void NixieTubeImpl::setBrightness(float value)
-{
+void NixieTubeImpl::setBrightness(float value){
   NixieTube::setBrightness(value);
 
   analogWrite(m_brightnessPin, (int) m_brightness * 255);

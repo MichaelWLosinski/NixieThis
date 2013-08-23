@@ -13,9 +13,10 @@
 
 class None : public Transition
 {
-    public:
-   
-    virtual void setNumber(int previous, int next);
+  public:
+  
+  None(Observer* observer); 
+  virtual void setNumber(int previous, int next);
 };
 
 #endif /* NONE_H_ */

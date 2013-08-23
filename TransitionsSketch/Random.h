@@ -3,17 +3,19 @@
  *  Author: Michael W. Losinski
  */
 
-#ifndef RANDOM_
-#define RANDOM_
+#ifndef RANDOM_H_
+#define RANDOM_H_
 
 #include "Arduino.h"
 #include "Transition.h"
 
 class Random : public Transition
 {
-    public:
+  public:
    
-    virtual void setNumber(int previous, int next);
+  Random(Observer* observer, int transitionTime, int count);
+  
+  virtual void setNumber(int previous, int next);
 };
 
 #endif 

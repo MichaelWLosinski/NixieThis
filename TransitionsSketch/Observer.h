@@ -10,9 +10,9 @@
 
 class Observer 
 {
-    public:
+    protected:
    
-    virtual void notify(int value);
+    virtual void notify(int value, float percent);
 };
 
 #endif 

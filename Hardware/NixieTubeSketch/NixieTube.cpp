@@ -8,16 +8,10 @@ NixieTube::NixieTube(int number, float value)
 
 }
 
-void NixieTube::setNumber(int value)
-{
-  //PRECONDITION(0 <= value && value <= 9);
+void NixieTube::setNumber(int value){
   m_number = value;
-  //POSCONDITION(m_value = value);
 }
 
-void NixieTube::setBrightness(float value)
-{
-  //PRECONDITION(0 <= value && value <= 1);
+void NixieTube::setBrightness(float value){
   m_brightness = value;
-  //POSTCONDITION(m_brightness = value);
 }
