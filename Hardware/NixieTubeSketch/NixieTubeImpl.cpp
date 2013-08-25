@@ -13,7 +13,7 @@ NixieTubeImpl::NixieTubeImpl(int number, float brightness, int a, int b, int c, 
   pinMode(m_c, OUTPUT);
   pinMode(m_d, OUTPUT);
 
-  pinMode(m_brightnessPin, OUTPUT);
+  pinMode(m_brightnessPin, INPUT);
 }
 
 void NixieTubeImpl::setNumber(int number){
@@ -28,5 +28,5 @@ void NixieTubeImpl::setNumber(int number){
 void NixieTubeImpl::setBrightness(float value){
   NixieTube::setBrightness(value);
 
-  analogWrite(m_brightnessPin, (int) m_brightness * 255);
+  analogWrite(m_brightnessPin, (1-value)*255);//Using 1 because the anoide is used as ground
 }

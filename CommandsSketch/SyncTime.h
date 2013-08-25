@@ -3,13 +3,12 @@
 
 #include "Command.h"
 
-class SyncTime : Command
-{
-public:
+class SyncTime : Command {
+  public:
 
-	SyncTime();
+  SyncTime(ReceiverInterface *receiver);
 
-	virtual bool interpret(char[] message);
+  virtual bool interpret(char[] message);
 };
 
 #endif

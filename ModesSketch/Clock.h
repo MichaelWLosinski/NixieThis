@@ -13,6 +13,8 @@ class Clock : public State
 public:
   
   Clock();
+  
+  
 };
 
 #endif

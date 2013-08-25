@@ -8,7 +8,7 @@ Clock::Clock(NixieTube *tubes[])
 
 }
 
-Clock::Update()
+void Clock::Update()
 {
   if(timeStatus() != timeNotSet)
   {
@@ -28,3 +28,5 @@ Clock::Update()
     log.info("time not set");
   }
 }
+
+void Clock::setTime(int hr, int min, int sec);

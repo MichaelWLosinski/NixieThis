@@ -15,32 +15,32 @@ class NixieTube
 {
 public:
 
-	/**
-	 * @param number: the initial number to be shown on the nixie tube
-	 * @param brightness: the percent of brightness for the nixie tube
-         * @pre (0 <= value && value <= 9)
-         * @post (m_value = value);
-	 */
-	NixieTube(int number, float value);
+ /**
+  * @param number: the initial number to be shown on the nixie tube
+  * @param brightness: the percent of brightness for the nixie tube
+  * @pre (0 <= value && value <= 9)
+  * @post (m_value = value);
+  */
+  NixieTube(int number, float value);
 
-	/**
-	 * Sets the nixie tubes digit.
-	 * @param 0 <= value <= 9
-         * @pre 0 <= value && value <= 1
-	 */
-	virtual void setNumber(int value);
+ /**
+  * Sets the nixie tubes digit.
+  * @param 0 <= value <= 9
+  * @pre 0 <= value && value <= 1
+  */
+  virtual void setNumber(int value);
 
-	/**
-	 * Sets the brightness of the tube
-	 * @param 0 <= value <= 1
-         * @post m_brightness = value
-	 */
-	virtual void setBrightness(float value);
+ /**
+  * Sets the brightness of the tube
+  * @param 0 <= value <= 100
+  * @post m_brightness = value
+  */
+  virtual void setBrightness(float value);
 
 protected:
 
-	int m_number;
-	float m_brightness;
+  int m_number;
+  int m_brightness;
 };
 
 #endif
