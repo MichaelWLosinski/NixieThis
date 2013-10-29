@@ -1,34 +1,27 @@
-#include "NixieTubeImpl.h"
+#include "ColonTubeImpl.h"
+#include "ColonTube.h"
 
-NixieTubeImpl::NixieTubeImpl(int number, float brightness, int a, int b, int c, int d, int brightnessPin)                            
-: NixieTube(number, brightness),
-  m_a(a),
-  m_b(b),
-  m_c(c),
-  m_d(d),
+ColontubeImpl::ColonTubeImpl(int topPin, int bottomPin, int brightnessPin)                            
+: ColonTube(),
+  m_topPin(a),
+  m_bottomPin(b),
   m_brightnessPin(brightnessPin)
 {
-  pinMode(m_a, OUTPUT);
-  pinMode(m_b, OUTPUT);
-  pinMode(m_c, OUTPUT);
-  pinMode(m_d, OUTPUT);
+  pinMode(m_topPin, OUTPUT);
+  pinMode(m_bottomPin, OUTPUT);
 
   pinMode(m_brightnessPin, OUTPUT);
 }
 
-void NixieTubeImpl::setNumber(int number)
-{
-  NixieTube::setNumber(number);
+void ColonTubeImpl::setNumber(State value){
+  ColonTube::setNumber(number);
 
-  digitalWrite(m_a, m_number & 0x01);
-  digitalWrite(m_b, m_number & 0x02);
-  digitalWrite(m_c, m_number & 0x04);
-  digitalWrite(m_d, m_number & 0x08);
+  digitalWrite(m_topPin, ColonTube::colon == state);
+  digitalWrite(m_bottomPin, ColonTube::off != state);
 }
 
-void NixieTubeImpl::setBrightness(float value)
-{
-  NixieTube::setBrightness(value);
+void ColonTubeImpl::setBrightness(float value){
+  ColonTube::setBrightness(value);
 
   analogWrite(m_brightnessPin, (int) m_brightness * 255);
 }

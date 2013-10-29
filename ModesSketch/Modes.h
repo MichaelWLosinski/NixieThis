@@ -1,23 +1,26 @@
 #ifndef MODES_H
 #define MODES_H
 
-class ModesController : public ReceiverInterface
+#include "ReceiverInterface.h"
+
+/*
+ * The clock has several modes: weather, time, date
+ * 
+ * @Author: Michael W. Losinski
+ * @Created: Jul 6, 2013
+ */
+class Modes : public ReceiverInterface
 {
 public:
   
-  enum MODE{
-    WEATHER, 
-    CLOCK, 
-    DATE
-  };
-  Modes(MODE mode);
-  void setMode(Weather *weather, Clock *clock, Date *date, MODE mode);
+  Modes();
+  
+  void addMode(State *state)
+  void setActiveModeMode(State *mode);
 
 private:
 
-  Weather *m_weather;
-  Clock *m_clock;
-  Date *m_date;
+  std::vector<State*> m_stateList;
 };
 
 #endif

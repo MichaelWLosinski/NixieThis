@@ -3,7 +3,8 @@
 
 #include "Command.h"
 
-class SyncTime : Command {
+class SyncTime : Command 
+{
   public:
 
   SyncTime(ReceiverInterface *receiver);

@@ -2,7 +2,7 @@
 
 int maxDaysPerMonth [] = { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
-SyncTime::SyncTime(ReceiverInterface *receiver);
+SyncTime::SyncTime(ReceiverInterface *receiver)
 : Command(receiver)
 {
 
@@ -28,7 +28,7 @@ virtual bool SetCaledar::interpret(char[] message){
       }      
       else{
         Calendar* calendar = (Calendar*) m_receiver;
-        calendar->setDte(day, month, yr);
+        calendar->setDate(day, month, yr);
         rVal = true;
       }
     }

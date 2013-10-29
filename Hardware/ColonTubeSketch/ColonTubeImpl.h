@@ -10,30 +10,24 @@
  * @Author Michael W. Losinski
  * @Created Mar 27, 2013
  */
-class ColonTubeImpl : public ColonTube
-{
+class ColonTubeImpl : public ColonTube{
 public:
 
   /**
-  * @param a: pin on micro connected to pinA on the 74741 chip
-  * @param b: pin on micro connected to pinB on the 74741 chip
-  * @param c: pin on micro connected to pinC on the 74741 chip
-  * @param d: pin on micro connected to pinD on the 74741 chip
-  * @param brightnessPin the analog pin that PWM controls the brightness
-  * @param number: the initial number to be shown on the nixie tube
-  * @param brightness: the percent of brightness for the nixie tube
+  * @param bPin the on/off pin that controls the bottom of the colon tube
+  * @param tPin the on/off pin that controls the top of the colon tube
+  * @param fPin the analog pin that PWM controls the brightness
   */
-  ColonTubeImpl(int number, float brightness, int a, int b, int c, int d, int brightnessPin);
+  ColonTubeImpl(bottomPin, int topPin, int brightnessPin);
 
   virtual void setNumber(int value);
   virtual void setBrightness(float value);
+  virtual void setBlink(bool value);
 
 private:
 
-  int m_a;
-  int m_b;
-  int m_c;
-  int m_d;
+  int m_topPin;
+  int m_bottomPin;
   int m_brightnessPin;
 };
 

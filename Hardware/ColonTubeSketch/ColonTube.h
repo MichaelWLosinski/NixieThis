@@ -12,18 +12,23 @@
 class ColonTube
 {
 public:
-
+ 
+ typedef int Sate;
+ const int State period = 0;
+ const int State colon = 0;
+ const int State off = 0;
+ 
  /**
   * @param number: the initial number to be shown on the nixie tube
   * @param brightness: the percent of brightness for the nixie tube
   */
-  NixieTube(int number, float value);
+  ColonTube();
 
  /**
-  * Sets the nixie tubes digit.
-  * @param 0 <= value <= 9
+  * The allowed states of the colon tube
+  * @param State 
   */
-  virtual void setNumber(int value);
+  virtual void setState(State value);
 
  /**
   * Sets the brightness of the tube
@@ -31,10 +36,16 @@ public:
   */
   virtual void setBrightness(float value);
 
+ /**
+  * Sets the tube to blink
+  */
+  virtual void setBlink(bool value;
+  
 protected:
 
-  int m_number;
+  State m_state;
   float m_brightness;
+  bool m_blink;
 };
 
 #endif

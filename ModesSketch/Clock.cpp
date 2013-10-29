@@ -29,4 +29,13 @@ void Clock::Update()
   }
 }
 
-void Clock::setTime(int hr, int min, int sec);
+void Clock::setTime(int hr, int mn, int sec)
+{
+  int d = Day();
+  int m = Month();
+  int y = Year();
+  
+  SetTime(hr, mn, sec, d, m, y);
+
+  log.info("Time set hour: %d minute: %d second: %d day: %d month: %d year: %d", hr mn, sec, d, m, y);   
+}
